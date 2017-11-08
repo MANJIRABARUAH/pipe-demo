@@ -4,12 +4,12 @@ const path = require('path');
 
 // Environment variables
 const node_env = process.env.NODE_ENV || "Local";
-const env_var = process.env.ENV_VAR || "Local";
+const env_name = process.env.ENV_NAME || "Local";
 const env_color = process.env.ENV_COLOR || "DodgerBlue";
 
 const env = {
   NODE_ENV: node_env,
-  ENV_VAR: env_var,
+  ENV_NAME: env_name,
   ENV_COLOR: env_color
 };
 
@@ -22,7 +22,7 @@ var jsonParser = bodyParser.json();
 
 app.get('/api/getEnvironment', function(request, response){
   const envVar = {
-    name: env.ENV_VAR,
+    name: env.ENV_NAME,
     color: env.ENV_COLOR
   };
 
